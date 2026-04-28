@@ -255,6 +255,7 @@ function Register() {
               console.log("Details missing: Name or Gender");
             }
           }} 
+          
           className={`w-full h-12 text-black font-bold rounded-full transition-all duration-300 ${
             (name.trim() !== "" && gender !== "")
               ? 'bg-green-500 hover:scale-105 active:scale-95' 
@@ -322,23 +323,33 @@ function Register() {
               </p>
             )}
 
-            {/* The Sign Up Button - Now with Logic */}
+          
             <button 
               type="button"
-              disabled={!sharingChecked} // Button is physically disabled if not checked
-              onClick={() => {
-                if (!sharingChecked) return; // Guard clause
+              disabled={!sharingChecked} 
+                    onClick={() => {
+         
+          const existingUsers = JSON.parse(localStorage.getItem('allSpotifyUsers')) || [];
 
-                const existingUser = JSON.parse(localStorage.getItem('spotifyUser'));
-                if (existingUser && existingUser.email === email) {
-                  setRegisterError('An account with this email already exists.');
-                  return;
-                }
+        
+          const userExists = existingUsers.some(user => user.email === email);
 
-                const userToSave = { email, password, username: name };
-                localStorage.setItem('spotifyUser', JSON.stringify(userToSave));
-                navigate('/login');
-              }}
+          if (userExists) {
+            setRegisterError('An account with this email already exists.');
+            return;
+          }
+
+      
+          const newUser = { email, password, username: name };
+
+        
+          existingUsers.push(newUser);
+
+       
+          localStorage.setItem('allSpotifyUsers', JSON.stringify(existingUsers));
+          
+          navigate('/login');
+        }}
               className={`w-full h-12 text-black font-bold rounded-full transition-all duration-300 ${
                 sharingChecked 
                   ? 'bg-green-500 hover:scale-105 active:scale-95' 

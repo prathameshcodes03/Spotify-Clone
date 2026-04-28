@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import spotifyLogo from './Spotify.png'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -18,41 +19,31 @@ const Login = () => {
     setError('')
   }
 
-  const handleLogin = (e) => {
-    e.preventDefault()
 
-    if (!formData.email || !formData.password) {
-      setError('Please fill in all fields')
-      return
-    }
+    const handleLogin = (e) => {
+      e.preventDefault();
 
-    if (!formData.email.includes('@')) {
-      setError('Please enter a valid email')
-      return
-    }
+      
+      const allUsers = JSON.parse(localStorage.getItem('allSpotifyUsers')) || [];
 
-    if (formData.password.length < 6) {
-      setError('Password must be at least 6 characters')
-      return
-    }
+   
+      const foundUser = allUsers.find(user => 
+        (user.email === formData.email || user.username === formData.email) && 
+        user.password === formData.password
+      );
 
-    const storedUser = JSON.parse(localStorage.getItem('spotifyUser'))
+      if (foundUser) {
+        localStorage.setItem('spotifyLoggedIn', JSON.stringify(true));
+        localStorage.setItem('spotifyCurrentUser', JSON.stringify(foundUser));
+        navigate('/home');
+      }
+      
+      else {
+        setError('Invalid email or password');
+      }
+    };
 
-    if (!storedUser) {
-      setError('No account found. Please sign up first')
-      return
-    }
 
-    if (storedUser.email !== formData.email || storedUser.password !== formData.password) {
-      setError('Invalid email or password')
-      return
-    }
-
-    localStorage.setItem('spotifyLoggedIn', JSON.stringify(true))
-    localStorage.setItem('spotifyCurrentUser', JSON.stringify(storedUser))
-
-    navigate('/home')
-  }
 
   return (
     <div className='bg-black flex justify-center items-center h-screen'>
@@ -119,26 +110,28 @@ const Login = () => {
           focus:scale-105 hover:border-gray-300 transition-all duration-300 placeholder-gray-500'
         />
 
-<div className="relative w-70">
-  <input 
-    type={showPassword ? 'text' : 'password'} 
-    name='password'
-    value={formData.password}
-    onChange={handleChange}
-    placeholder='Password' 
-    className='w-full h-10 text-white cursor-pointer border rounded-2xl border-gray-400 text-center bg-transparent 
-    focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/40 focus:shadow-[0_0_15px_rgba(34,197,94,0.3)]
-    focus:scale-105 hover:border-gray-300 transition-all duration-300 placeholder-gray-500'
-  />
-  <button 
-    type="button"
-    onClick={() => setShowPassword(!showPassword)}
-    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
-  >
-   
-    <i className={`fa-solid ${showPassword ? 'fa-eye' : 'fa-eye-slash'} text-sm`}></i>
-  </button>
-</div>
+          <div className="relative w-70">
+            <input 
+              type={showPassword ? 'text' : 'password'} 
+              name='password'
+              value={formData.password}
+              onChange={handleChange}
+              placeholder='Password' 
+              className='w-full h-10 text-white cursor-pointer border rounded-2xl border-gray-400 text-center bg-transparent 
+              focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/40 focus:shadow-[0_0_15px_rgba(34,197,94,0.3)]
+              focus:scale-105 hover:border-gray-300 transition-all duration-300 placeholder-gray-500'
+            />
+
+
+            <button 
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+            >
+            
+              <i className={`fa-solid ${showPassword ? 'fa-eye' : 'fa-eye-slash'} text-sm`}></i>
+            </button>
+          </div>
 
         <a href="#" className='text-gray-400 text-sm cursor-pointer text-center 
           relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-green-400 
@@ -152,15 +145,19 @@ const Login = () => {
           Log in
         </button>
 
+
+
         <div className="flex flex-row items-center justify-center gap-1">
           <a href="#" className='text-gray-400 text-sm cursor-pointer'>
             Don't have an account?
           </a>
-          <a href="/register" className='text-green-400 text-sm cursor-pointer font-semibold
-            relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-green-400
-            hover:after:w-full after:transition-all after:duration-300 hover:text-green-300 transition-colors duration-300'>
+
+          <Link 
+            to="/register" 
+            className='text-green-400 text-sm cursor-pointer font-semibold relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-green-400 hover:after:w-full after:transition-all after:duration-300 hover:text-green-300 transition-colors duration-300'
+          >
             Signup for Spotify
-          </a>
+          </Link>
         </div>
 
       </div>

@@ -1,10 +1,15 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
+import Sidebar from '../components/Sidebar'
+import spotifyLogo from './Spotify.png'
 
 const Home = () => {
   return (
-    <div className='bg-amber-600 flex items-center justify-center h-screen'>
-      Home
-    </div>
+
+  <div>
+    <Navbar/>
+    <Sidebar/>
+  </div>
   )
 }
 
