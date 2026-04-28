@@ -15,6 +15,9 @@ function Register() {
   const [dob, setDob] = useState({ day: '', month: '', year: '' });
   const [gender, setGender] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [marketingChecked, setMarketingChecked] = useState(false)
+  const [sharingChecked, setSharingChecked] = useState(false)
+  const [registerError, setRegisterError] = useState('')
 
   const validations = {
     hasLetter: /[a-zA-Z]/.test(password),
@@ -56,7 +59,7 @@ function Register() {
 
             <input 
               type='email'
-              placeholder='Email or Username'
+              placeholder='Email '
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className='w-70 h-10 text-white cursor-pointer border rounded-2xl border-gray-400 text-center bg-transparent 
@@ -241,70 +244,111 @@ function Register() {
               </div>
             </div>
 
-           <button 
-  onClick={() => setStep(4)} 
-  className='w-full h-12 text-black font-bold bg-green-500 rounded-full hover:scale-105 active:scale-95 transition-all'
->
-  Next
-</button>
+        <button 
+          type="button"
+          onClick={() => {
+            // 1. Check if the user has actually filled something in
+            if (name.trim() !== "" && gender !== "") {
+              setStep(4); // Force move to Step 4 (Terms)
+            } else {
+              // If they haven't filled it, we can highlight the border or just wait
+              console.log("Details missing: Name or Gender");
+            }
+          }} 
+          className={`w-full h-12 text-black font-bold rounded-full transition-all duration-300 ${
+            (name.trim() !== "" && gender !== "")
+              ? 'bg-green-500 hover:scale-105 active:scale-95' 
+              : 'bg-[#535353] cursor-not-allowed opacity-50'
+          }`}
+        >
+          Next
+        </button>
           </div>
         )}
 
 
 
-{step === 4 && (
-  <div className="flex flex-col items-start w-full animate-in slide-in-from-right duration-500">
-   
-    <button onClick={() => setStep(3)} className="text-gray-400 hover:text-white mb-4 transition-colors">
-      <i className="fa-solid fa-chevron-left text-xl"></i>
-    </button>
-    
-    <p className="text-gray-400 text-sm font-semibold mb-1">Step 3 of 3</p>
-    <h2 className="text-white text-2xl font-bold mb-6">Terms & Conditions</h2>
+        {step === 4 && (
+          <div className="flex flex-col items-start w-full animate-in slide-in-from-right duration-500">
+          
+            <button onClick={() => setStep(3)} className="text-gray-400 hover:text-white mb-4 transition-colors">
+              <i className="fa-solid fa-chevron-left text-xl"></i>
+            </button>
+            
+            <p className="text-gray-400 text-sm font-semibold mb-1">Step 3 of 3</p>
+            <h2 className="text-white text-2xl font-bold mb-6">Terms & Conditions</h2>
 
-   
-    <div className="w-full bg-[#242424] p-4 rounded-lg flex items-start gap-3 mb-3 hover:bg-[#2a2a2a] transition-colors cursor-pointer group">
-      <input type="checkbox" className="mt-1 accent-green-500 w-4 h-4 cursor-pointer" />
-      <p className="text-white text-sm leading-tight">
-        I would prefer not to receive marketing messages from Spotify
-      </p>
-    </div>
+            {/* Checkbox 1: Marketing */}
+            <div 
+              className="w-full bg-[#242424] p-4 rounded-lg flex items-start gap-3 mb-3 hover:bg-[#2a2a2a] transition-colors cursor-pointer"
+              onClick={() => setMarketingChecked(!marketingChecked)}
+            >
+              <input 
+                type="checkbox" 
+                className="mt-1 accent-green-500 w-4 h-4 cursor-pointer"
+                checked={marketingChecked}
+                readOnly 
+              />
+              <p className="text-white text-sm leading-tight">
+                I would prefer not to receive marketing messages from Spotify
+              </p>
+            </div>
 
-   
-    <div className="w-full bg-[#242424] p-4 rounded-lg flex items-start gap-3 mb-6 hover:bg-[#2a2a2a] transition-colors cursor-pointer group">
-      <input type="checkbox" className="mt-1 accent-green-500 w-4 h-4 cursor-pointer" />
-      <p className="text-white text-sm leading-tight">
-        Share my registration data with Spotify’s content providers for marketing purposes.
-      </p>
-    </div>
+            {/* Checkbox 2: Sharing (Required) */}
+            <div 
+              className="w-full bg-[#242424] p-4 rounded-lg flex items-start gap-3 mb-6 hover:bg-[#2a2a2a] transition-colors cursor-pointer"
+              onClick={() => setSharingChecked(!sharingChecked)}
+            >
+              <input 
+                type="checkbox" 
+                className="mt-1 accent-green-500 w-4 h-4 cursor-pointer"
+                checked={sharingChecked}
+                readOnly
+              />
+              <p className="text-white text-sm leading-tight">
+                Share my registration data with Spotify's content providers for marketing purposes.
+              </p>
+            </div>
 
-    <div className="text-white text-[11px] space-y-4 mb-8 leading-normal">
-      <p>Spotify is a personalised service.</p>
-      <p>
-        By clicking on ‘Sign up’, you agree to Spotify’s <span className="text-green-400 underline cursor-pointer">Terms and Conditions of Use</span>.
-      </p>
-      <p>
-        By clicking on Sign Up, you confirm that you have read how we process your personal data in our <span className="text-green-400 underline cursor-pointer">Privacy Policy</span>.
-      </p>
-    </div>
+            <div className="text-white text-[11px] space-y-4 mb-8 leading-normal">
+              <p>Spotify is a personalised service.</p>
+              <p>By clicking on ‘Sign up’, you agree to Spotify’s <span className="text-green-400 underline cursor-pointer">Terms and Conditions of Use</span>.</p>
+            </div>
 
-   
-  <button 
-  onClick={() => {
-    const userToSave = {
-      email: email,       
-      password: password, 
-      username: name      
-    };
-    localStorage.setItem('spotifyUser', JSON.stringify(userToSave));
-    navigate('/Login'); 
-  }}
-  className='w-full h-12 text-black font-bold bg-green-500 rounded-full hover:scale-105 transition-all'
->
-  Sign up
-</button>
-</div>)}
- 
+            {/* Error Message */}
+            {registerError && (
+              <p className="text-red-400 text-xs text-center w-full mb-4 bg-red-400/10 py-2 rounded-xl border border-red-400/30">
+                {registerError}
+              </p>
+            )}
+
+            {/* The Sign Up Button - Now with Logic */}
+            <button 
+              type="button"
+              disabled={!sharingChecked} // Button is physically disabled if not checked
+              onClick={() => {
+                if (!sharingChecked) return; // Guard clause
+
+                const existingUser = JSON.parse(localStorage.getItem('spotifyUser'));
+                if (existingUser && existingUser.email === email) {
+                  setRegisterError('An account with this email already exists.');
+                  return;
+                }
+
+                const userToSave = { email, password, username: name };
+                localStorage.setItem('spotifyUser', JSON.stringify(userToSave));
+                navigate('/login');
+              }}
+              className={`w-full h-12 text-black font-bold rounded-full transition-all duration-300 ${
+                sharingChecked 
+                  ? 'bg-green-500 hover:scale-105 active:scale-95' 
+                  : 'bg-[#535353] cursor-not-allowed opacity-50'
+              }`}
+            >
+              Sign up
+            </button>
+          </div>
+        )}         
      </div>
     </div>
   );
