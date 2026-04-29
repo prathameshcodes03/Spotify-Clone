@@ -50,39 +50,33 @@ const Navbar = () => {
                     
 
 
-                    
+                                    <div className='flex justify-end ml-67 flex-wrap'>
+                                <div className='flex justify-end gap-x-8'>
+                                    
 
-                      <div className='flex justify-end ml-67 flex-wrap  '>
+                    <Link to="/premium" className='text-white cursor-pointer mt-4 hover:text-gray-300 hover:scale-105 transition-all'>Premium</Link>
+                    <Link to="/support" className='text-white cursor-pointer mt-4 hover:text-gray-300 hover:scale-105 transition-all'>Support</Link>
+                    <Link to="/download" className='text-white cursor-pointer mt-4 hover:text-gray-300 hover:scale-105 transition-all'>Download</Link>
 
-                    <div className='flex justify-end  gap-x-8 '>
 
-                <Link to="/premium" className='text-white cursor-pointer mt-4'>Premium</Link>
-                <Link to="/support" className='text-white cursor-pointer mt-4'>Support</Link>
-                <Link to="/download" className='text-white cursor-pointer mt-4'>Download</Link>
-
-                <button className='bg-black  text-white text-center rounded-3xl flex justify-evenly cursor-pointer items-center   h-15 w-30'>
+                    <button className='bg-black text-white text-center rounded-3xl flex justify-evenly cursor-pointer items-center h-15 w-30 hover:scale-105 hover:text-gray-200 transition-all'>
                     <i className="fa-solid fa-download"></i>
                     Install App
-                </button>
-
-                    <button className='bg-black text-center  text-white rounded-4xl flex justify-evenly cursor-pointer items-center w-20 h-15'>
-                Sign Up
-                </button>
-
-
-                    <button className='bg-white text-center  text-black rounded-3xl flex justify-evenly cursor-pointer mt-2 items-center  w-30  h-11'>
-                    Log in 
-                </button>
-
-                </div>
-
-                        
-
-
-                </div>
-
+                    </button>
 
                 
+                    <button className='bg-black text-center text-white rounded-4xl flex justify-evenly cursor-pointer items-center w-20 h-15 hover:scale-105 hover:text-gray-300 transition-all'>
+                    Sign Up
+                    </button>
+
+                    
+                    <button className='bg-white text-center text-black rounded-3xl flex justify-evenly cursor-pointer mt-2 items-center w-30 h-11 hover:scale-105 hover:bg-gray-100 transition-all'>
+                    Log in 
+                    </button>
+
+                </div>
+                </div>
+                                
 
                  
 
