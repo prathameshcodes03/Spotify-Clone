@@ -16,7 +16,7 @@ const Navbar = () => {
                     alt="Spotify.png" 
                     />
 
-                    <button className='rounded-full px-2 py-2 w-14 bg-gray-500 cursor-pointer h-14 hover:rotate-[360deg] hover:scale-110 transition-all duration-700 shrink-0'>
+                    <button className='rounded-full px-2 py-2 w-14 bg-white text-black cursor-pointer h-14 hover:rotate-[360deg] hover:scale-110 transition-all duration-700 shrink-0'>
                     <i className="fa-regular fa-house"></i>
                     </button>
 
