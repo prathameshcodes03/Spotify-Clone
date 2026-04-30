@@ -56,22 +56,22 @@ export const folders = [
       { id: "h7",  title: "Kaise Hua",          artist: "Vishal Mishra",             album: "Kabir Singh",        duration: 221, audioUrl: "/songs/27.mp3" },
     ]
   },
-  {
-    id: "folder_marathi",
-    name: "Top Marathi Hits",
-    description: "Best of Marathi music — folk to film",
-    cover: "https://picsum.photos/seed/marathi/300/300",
-    type: "playlist",
-    songs: [
-      { id: "m1",  title: "Zingaat",            artist: "Ajay-Atul",         album: "Sairat",                 duration: 218, audioUrl: "/songs/31.mp3" },
-      { id: "m2",  title: "Yad Lagla",          artist: "Swapnil Bandodkar", album: "Sairat",                 duration: 298, audioUrl: "/songs/32.mp3" },
-      { id: "m3",  title: "Ek Taraa",           artist: "Avdhoot Gupte",     album: "Me Shivajiraje",         duration: 312, audioUrl: "/songs/33.mp3" },
-      { id: "m4",  title: "Aata Majhi Satakli", artist: "Ajay-Atul",         album: "Singham",                duration: 228, audioUrl: "/songs/34.mp3" },
-      { id: "m5",  title: "Man Kasturi Re",     artist: "Shankar Mahadevan", album: "Mangalashtak Once More", duration: 286, audioUrl: "/songs/35.mp3" },
-      { id: "m6",  title: "Kombdi Palali",      artist: "Santosh Nair",      album: "Natarang",               duration: 198, audioUrl: "/songs/36.mp3" },
-      { id: "m7",  title: "Morya Re",           artist: "Swapnil Bandodkar", album: "Single",                 duration: 244, audioUrl: "/songs/37.mp3" },
-    ]
-  },
+        {
+        id: "folder_marathi",
+        name: "Top Marathi Hits",
+        description: "Best of Marathi music — folk to film",
+        cover: "https://picsum.photos/seed/marathi/300/300",
+        type: "playlist",
+        songs: [
+          { id: "m1",  title: "Reshmi Reshmi",         artist: "Sonu Nigam, Anandi Joshi",     album: "One Way Ticket",       duration: 265, audioUrl: "/songs/31.mp3" },
+          { id: "m2",  title: "Zingaat",               artist: "Ajay-Atul",                    album: "Sairat",               duration: 218, audioUrl: "/songs/32.mp3" },
+          { id: "m3",  title: "Wajle Ki Bara",         artist: "Bela Shende",                  album: "Natarang",             duration: 215, audioUrl: "/songs/33.mp3" },
+          { id: "m4",  title: "Tu Jarashi",            artist: "Hrishikesh Ranade",            album: "Ti Saddhya Kay Karte", duration: 240, audioUrl: "/songs/34.mp3" },
+          { id: "m5",  title: "Saavar Re Mana",        artist: "Swapnil Bandodkar",            album: "Mumbai-Pune-Mumbai",   duration: 275, audioUrl: "/songs/35.mp3" },
+          { id: "m6",  title: "Sar Sukhachi Shravani", artist: "Ajay-Atul",                    album: "Mumbai-Pune-Mumbai",   duration: 260, audioUrl: "/songs/36.mp3" },
+          { id: "m7",  title: "Olya Sanj Veli",        artist: "Swapnil Bandodkar, Bela Shende", album: "Duniyadari",     duration: 245, audioUrl: "/songs/37.mp3" },
+        ]
+      },
   {
     id: "folder_devotional",
     name: "Devotional Hits",
@@ -79,15 +79,15 @@ export const folders = [
     cover: "https://picsum.photos/seed/devotional/300/300",
     type: "playlist",
     songs: [
-      { id: "d1",  title: "Om Jai Jagdish Hare",       artist: "Anuradha Paudwal",  album: "Aarti Sangrah",   duration: 312, audioUrl: "/songs/41.mp3" },
-      { id: "d2",  title: "Jai Ganesh Jai Ganesh",     artist: "Anuradha Paudwal",  album: "Ganesh Vandana",  duration: 298, audioUrl: "/songs/42.mp3" },
-      { id: "d3",  title: "Hanuman Chalisa",           artist: "Hariharan",         album: "Shri Hanuman",    duration: 420, audioUrl: "/songs/43.mp3" },
-      { id: "d4",  title: "Achyutam Keshavam",         artist: "Shankar Mahadevan", album: "Krishna Bhajans", duration: 386, audioUrl: "/songs/44.mp3" },
-      { id: "d5",  title: "Shiv Tandav Stotram",       artist: "Hariharan",         album: "Shiv Mahima",     duration: 348, audioUrl: "/songs/45.mp3" },
-      { id: "d6",  title: "Aigiri Nandini",            artist: "Bombay Jayashree",  album: "Devi Stotram",    duration: 362, audioUrl: "/songs/46.mp3" },
-      { id: "d7",  title: "Vaishnav Jan To",           artist: "Lata Mangeshkar",   album: "Bhajan Sangrah",  duration: 334, audioUrl: "/songs/47.mp3" },
+      { id: "d1",  title: "Om Jai Jagdish Hare",       artist: "Anuradha Paudwal",  album: "Aarti Sangrah",       duration: 312, audioUrl: "/songs/41.mp3" },
+      { id: "d2",  title: "Jai Ganesh Jai Ganesh",     artist: "Anuradha Paudwal",  album: "Ganesh Vandana",      duration: 298, audioUrl: "/songs/42.mp3" },
+      { id: "d3",  title: "Hanuman Chalisa",           artist: "Hariharan",         album: "Shri Hanuman",        duration: 420, audioUrl: "/songs/43.mp3" },
+      { id: "d4",  title: "Swamimanas Pooja",          artist: "Various",           album: "Swami Samarth Stavan",duration: 325, audioUrl: "/songs/44.mp3" },
+      { id: "d5",  title: "Ram Raksha",                artist: "Anuradha Paudwal",     album: "Stotra Sangrah",      duration: 380, audioUrl: "/songs/45.mp3" },
+      { id: "d6",  title: "Digambara Digambara",       artist: "Swapnil Bandodkar",    album: "Dattatreya Bhajans",  duration: 295, audioUrl: "/songs/46.mp3" },
+      { id: "d7",  title: "Shri Sukta",                artist: "Agam Agarwal",  album: "Vedic Chants",        duration: 345, audioUrl: "/songs/47.mp3" },
     ]
-  },
+},
   // ════════════════════════════════
   //  ROW 2 — ARTIST SPECIALS
   // ════════════════════════════════
@@ -99,15 +99,15 @@ export const folders = [
     type: "artist_special",
     artist: "Arijit Singh",
     songs: [
-      { id: "a1",  title: "Tum Hi Ho",          artist: "Arijit Singh", album: "Aashiqui 2",              duration: 261, audioUrl: "/songs/51.mp3" },
-      { id: "a2",  title: "Channa Mereya",       artist: "Arijit Singh", album: "Ae Dil Hai Mushkil",      duration: 288, audioUrl: "/songs/52.mp3" },
-      { id: "a3",  title: "Kesariya",            artist: "Arijit Singh", album: "Brahmastra",              duration: 268, audioUrl: "/songs/53.mp3" },
+      { id: "a1",  title: "Tum Hi Ho",          artist: "Arijit Singh", album: "Aashiqui 2",              duration: 261, audioUrl: "/songs/21.mp3" },
+      { id: "a2",  title: "Channa Mereya",       artist: "Arijit Singh", album: "Ae Dil Hai Mushkil",      duration: 288, audioUrl: "/songs/22.mp3" },
+      { id: "a3",  title: "Kesariya",            artist: "Arijit Singh", album: "Brahmastra",              duration: 268, audioUrl: "/songs/14.mp3" },
       { id: "a4",  title: "Apna Bana Le",        artist: "Arijit Singh", album: "Bhediya",                 duration: 276, audioUrl: "/songs/54.mp3" },
-      { id: "a5",  title: "Agar Tum Saath Ho",   artist: "Arijit Singh", album: "Tamasha",                 duration: 348, audioUrl: "/songs/55.mp3" },
+      { id: "a5",  title: "Tum Hi Ho Bandhu",    artist: "Neeti Mohan, Nikhil D'Souza", album: "Cocktail", duration: 287, audioUrl: "/songs/55.mp3" },
       { id: "a6",  title: "Gerua",               artist: "Arijit Singh", album: "Dilwale",                 duration: 281, audioUrl: "/songs/56.mp3" },
       { id: "a7",  title: "Nashe Se Chad Gayi",  artist: "Arijit Singh", album: "Befikre",                 duration: 238, audioUrl: "/songs/57.mp3" },
     ]
-  },
+},
   {
     id: "folder_jubin",
     name: "Jubin Nautiyal Special",
