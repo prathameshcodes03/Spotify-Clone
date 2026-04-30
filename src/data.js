@@ -117,7 +117,7 @@ export const folders = [
     artist: "Jubin Nautiyal",
     songs: [
       { id: "j1",  title: "Lut Gaye",                  artist: "Jubin Nautiyal", album: "Single",                  duration: 248, audioUrl: "/songs/61.mp3" },
-      { id: "j2",  title: "Raataan Lambiyan",           artist: "Jubin Nautiyal", album: "Shershaah",               duration: 253, audioUrl: "/songs/62.mp3" },
+      { id: "j2",  title: "Raataan Lambiyan",           artist: "Jubin Nautiyal", album: "Shershaah",               duration: 253, audioUrl: "/songs/16.mp3" },
       { id: "j3",  title: "Kahani",                     artist: "Jubin Nautiyal", album: "Single",                  duration: 241, audioUrl: "/songs/63.mp3" },
       { id: "j4",  title: "Safar",                      artist: "Jubin Nautiyal", album: "Jab Harry Met Sejal",     duration: 262, audioUrl: "/songs/64.mp3" },
       { id: "j5",  title: "Tujhe Kitna Chahne Lage",    artist: "Jubin Nautiyal", album: "Kabir Singh",             duration: 274, audioUrl: "/songs/65.mp3" },
@@ -134,14 +134,14 @@ export const folders = [
     artist: "Shreya Ghoshal",
     songs: [
       { id: "sh1",  title: "Teri Meri",                 artist: "Shreya Ghoshal", album: "Bodyguard",           duration: 278, audioUrl: "/songs/71.mp3" },
-      { id: "sh2",  title: "Lag Ja Gale",               artist: "Shreya Ghoshal", album: "Woh Kaun Thi",        duration: 316, audioUrl: "/songs/72.mp3" },
+      { id: "sh2",  title: "Chandra",                   artist: "Shreya Ghoshal", album: "Chandramukhi",        duration: 254, audioUrl: "/songs/72.mp3" },
       { id: "sh3",  title: "Tujh Mein Rab Dikhta Hai",  artist: "Shreya Ghoshal", album: "Rab Ne Bana Di Jodi", duration: 298, audioUrl: "/songs/73.mp3" },
       { id: "sh4",  title: "Dola Re Dola",              artist: "Shreya Ghoshal", album: "Devdas",              duration: 348, audioUrl: "/songs/74.mp3" },
       { id: "sh5",  title: "Tum Kya Mile",              artist: "Shreya Ghoshal", album: "Rocky Aur Rani",      duration: 318, audioUrl: "/songs/75.mp3" },
       { id: "sh6",  title: "Sunn Raha Hai",             artist: "Shreya Ghoshal", album: "Aashiqui 2",          duration: 286, audioUrl: "/songs/76.mp3" },
       { id: "sh7",  title: "Manma Emotion",             artist: "Shreya Ghoshal", album: "Dilwale",             duration: 218, audioUrl: "/songs/77.mp3" },
     ]
-  },
+},
   {
     id: "folder_neha",
     name: "Neha Kakkar Special",
