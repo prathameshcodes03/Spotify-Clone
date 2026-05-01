@@ -1,6 +1,7 @@
 import React from 'react'
 import Music from './Music'
 import Footer from './Footer'
+import Audio from '../pages/Audio'
 import album1 from '../assests/top50global.avif'
 import album2 from '../assests/topindiahits.jpeg'
 import album3 from '../assests/bollywoodhits.webp'
@@ -49,9 +50,9 @@ const Album = () => {
           <h1 className="text-3xl font-bold text-start mb-4 ml-4">Popular Artists</h1>
           <div className="flex flex-nowrap gap-x-6 overflow-x-auto scrollbar-hide pb-4 px-4">
             <Music  imageSrc={album5} />
-            <Music  imageSrc={album6}/>
             <Music  imageSrc={album7}/>
-            <Music imageSrc={album8} />
+            <Music  imageSrc={album8}/>
+            <Music imageSrc={album6} />
             <Music  imageSrc={album9}/>
 
             

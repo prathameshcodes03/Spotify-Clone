@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import Album from '../components/Album'
-import Player from '../components/Player'
+import Audio from './Audio'
 import spotifyLogo from './Spotify.png'
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
     <Navbar/>
     <Sidebar/>
     <Album/>
-    <Player/>
+    
   </div>
   )
 }

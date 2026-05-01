@@ -1,14 +1,32 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { usePlayer } from '../context/PlayerContext';
 
-const Music = ({imageSrc}) => {
+const Music = ({ imageSrc }) => {
+  const navigate = useNavigate();
+  const { setCurrentImage } = usePlayer();
+
+  const handlePlayClick = () => {
+   
+    setCurrentImage(imageSrc);
+  
+    navigate('/Audio');
+  };
+
   return (
     <div>
-      <button className='h-50 w-50 mt-12 ml-10 cursor-pointer rounded-2xl bg-red-600'
-      style={{ backgroundImage: `url(${imageSrc})`,backgroundSize: 'cover',backgroundPosition: 'center'}}>
-
+      <button 
+        className='h-50 w-50 mt-12 ml-10 cursor-pointer rounded-2xl bg-red-600' 
+        onClick={handlePlayClick}
+        style={{ 
+          backgroundImage: `url(${imageSrc})`, 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center' 
+        }}
+      >
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default Music
+export default Music;
