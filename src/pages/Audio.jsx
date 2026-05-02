@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import Header from '../components/Header'
 import Player from '../components/Player'
+import Songs from '../components/Songs'
+
 
 
 const Audio = () => {
@@ -11,6 +13,8 @@ const Audio = () => {
         <Navbar/>
         <Sidebar/>
         <Header/>
+        <Songs/>
+       
         <Player/>
        
         
