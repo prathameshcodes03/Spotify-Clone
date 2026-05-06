@@ -5,31 +5,31 @@ const Player = () => {
   const { currentImage, currentSong } = usePlayer();
 
   const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying]   = useState(false);
-  const [progress, setProgress]     = useState(0);
+  const [isPlaying, setIsPlaying]     = useState(false);
+  const [progress, setProgress]       = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration]     = useState(0);
-  const [volume, setVolume]         = useState(1);
-  const [isShuffle, setIsShuffle]   = useState(false);
-  const [isRepeat, setIsRepeat]     = useState(false);
+  const [duration, setDuration]       = useState(0);
+  const [volume, setVolume]           = useState(1);
+  const [isShuffle, setIsShuffle]     = useState(false);
+  const [isRepeat, setIsRepeat]       = useState(false);
 
-useEffect(() => {
-  if (!currentSong?.audioUrl || !audioRef.current) return
-  audioRef.current.src = currentSong.audioUrl
-  audioRef.current.load()
-  audioRef.current.play().catch(err => console.log('play error:', err))
-  setIsPlaying(true)
-}, [currentSong])
+  useEffect(() => {
+    if (!currentSong?.audioUrl || !audioRef.current) return
+    audioRef.current.src = currentSong.audioUrl
+    audioRef.current.load()
+    audioRef.current.play().catch(err => console.log('play error:', err))
+    setIsPlaying(true)
+  }, [currentSong])
 
   const togglePlay = () => {
-  if (!audioRef.current || !currentSong?.audioUrl) return
-  if (isPlaying) {
-    audioRef.current.pause()
-  } else {
-    audioRef.current.play().catch(err => console.log('play error:', err))
+    if (!audioRef.current || !currentSong?.audioUrl) return
+    if (isPlaying) {
+      audioRef.current.pause()
+    } else {
+      audioRef.current.play().catch(err => console.log('play error:', err))
+    }
+    setIsPlaying(!isPlaying)
   }
-  setIsPlaying(!isPlaying)
-}
 
   const handleTimeUpdate = () => {
     if (!audioRef.current) return;
@@ -64,7 +64,7 @@ useEffect(() => {
   return (
     <div className='w-full h-24 bg-black border-t border-gray-800 flex items-center px-6 gap-6'>
 
-     
+    
       <div className='flex items-center gap-3 w-64 flex-shrink-0'>
         {currentImage ? (
           <img
@@ -83,39 +83,51 @@ useEffect(() => {
             {currentSong?.artist || ''}
           </p>
         </div>
-        <button className='text-gray-400 hover:text-white ml-2 flex-shrink-0 text-lg'>♡</button>
+        <button className='text-gray-400 hover:text-white ml-2 flex-shrink-0'>
+          <i className="fa-regular fa-heart text-lg"></i>
+        </button>
       </div>
 
-   
+     
       <div className='flex flex-col items-center flex-1 gap-2'>
 
-       
+  
         <div className='flex items-center gap-6'>
-     
+
+          {/* shuffle */}
           <button
             onClick={() => setIsShuffle(!isShuffle)}
-            className={`text-xl transition-colors ${isShuffle ? 'text-green-500' : 'text-gray-400 hover:text-white'}`}
+            className={`transition-colors ${isShuffle ? 'text-green-500' : 'text-gray-400 hover:text-white'}`}
           >
-            ⇄
+            <i className="fa-solid fa-shuffle text-lg"></i>
           </button>
+
          
-          <button className='text-gray-400 hover:text-white text-xl'>⏮</button>
-       
+          <button className='text-gray-400 hover:text-white'>
+            <i className="fa-solid fa-backward-step text-xl"></i>
+          </button>
+
+
           <button
             onClick={togglePlay}
-            className='w-10 h-10 rounded-full bg-white flex items-center justify-center text-black text-lg hover:scale-105 transition-transform'
+            className='w-10 h-10 rounded-full bg-white flex items-center justify-center text-black hover:scale-105 transition-transform'
           >
-            {isPlaying ? '⏸' : '▶'}
+            <i className={`fa-solid ${isPlaying ? 'fa-pause' : 'fa-play'} text-sm`}></i>
           </button>
-          {/* next */}
-          <button className='text-gray-400 hover:text-white text-xl'>⏭</button>
-          {/* repeat */}
+
+        
+          <button className='text-gray-400 hover:text-white'>
+            <i className="fa-solid fa-forward-step text-xl"></i>
+          </button>
+
+    
           <button
             onClick={() => setIsRepeat(!isRepeat)}
-            className={`text-xl transition-colors ${isRepeat ? 'text-green-500' : 'text-gray-400 hover:text-white'}`}
+            className={`transition-colors ${isRepeat ? 'text-green-500' : 'text-gray-400 hover:text-white'}`}
           >
-            ↻
+            <i className="fa-solid fa-repeat text-lg"></i>
           </button>
+
         </div>
 
    
@@ -135,9 +147,9 @@ useEffect(() => {
 
       </div>
 
-      {/* RIGHT — volume */}
+  
       <div className='flex items-center gap-2 w-40 flex-shrink-0'>
-        <span className='text-gray-400 text-sm'>🔊</span>
+        <i className="fa-solid fa-volume-high text-gray-400"></i>
         <input
           type='range'
           min='0'
@@ -149,15 +161,14 @@ useEffect(() => {
         />
       </div>
 
-   
-      
-<audio
-  ref={audioRef}
-  onTimeUpdate={handleTimeUpdate}
-  onLoadedMetadata={handleTimeUpdate}
-  onEnded={() => setIsPlaying(false)}
-  loop={isRepeat}
-/>
+
+      <audio
+        ref={audioRef}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleTimeUpdate}
+        onEnded={() => setIsPlaying(false)}
+        loop={isRepeat}
+      />
 
     </div>
   );

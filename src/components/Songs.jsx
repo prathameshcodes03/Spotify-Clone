@@ -5,6 +5,7 @@ import { folders, formatDuration } from '../data';
 import album1 from '../assests/top50global.avif';
 import album2 from '../assests/topindiahits.jpeg';
 import album3 from '../assests/bollywoodhits.webp';
+import album10 from '../assests/marathihits.jpeg'
 import album4 from '../assests/devotionalhits.jpeg';
 import album5 from '../assests/arjitsingh.jpeg';
 import album6 from '../assests/neha.jpeg';
@@ -20,6 +21,7 @@ const Songs = () => {
   if (currentImage === album1) activeFolder = folders.find(f => f.id === 'folder_global')
   else if (currentImage === album2) activeFolder = folders.find(f => f.id === 'folder_india')
   else if (currentImage === album3) activeFolder = folders.find(f => f.id === 'folder_hindi')
+  else if (currentImage === album10) activeFolder = folders.find(f => f.id === 'folder_marathi')
   else if (currentImage === album4) activeFolder = folders.find(f => f.id === 'folder_devotional')
   else if (currentImage === album5) activeFolder = folders.find(f => f.id === 'folder_arijit')
   else if (currentImage === album6) activeFolder = folders.find(f => f.id === 'folder_neha')

@@ -6,8 +6,7 @@ import album1 from '../assests/top50global.avif'
 import album2 from '../assests/topindiahits.jpeg'
 import album3 from '../assests/bollywoodhits.webp'
 import album4 from '../assests/devotionalhits.jpeg'
-
-
+import album10 from '../assests/marathihits.jpeg'
 import album5 from '../assests/arjitsingh.jpeg'
 import album6 from '../assests/neha.jpeg'
 import album7 from '../assests/jubin.jpeg'
@@ -41,6 +40,7 @@ const Album = () => {
             <Music imageSrc={album1}/>
             <Music imageSrc={album2}/>
             <Music imageSrc={album3}/>
+            <Music imageSrc={album10}/>  
             <Music imageSrc={album4}/>
           
           </div>
