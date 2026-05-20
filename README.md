@@ -56,4 +56,3 @@ The roadmap for upcoming versions of this music player includes:
 * [ ] **User Playlists:** Implementing user authentication to allow individuals to build, save, and favorite custom music playlists.
 
 
-```
