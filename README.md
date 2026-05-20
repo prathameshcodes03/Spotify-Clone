@@ -1,6 +1,4 @@
-Here is a professional, beautifully formatted `README.md` designed to make your music player repository stand out to developers and recruiters.
 
----
 
 #  Spotify 
 
