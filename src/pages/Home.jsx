@@ -8,7 +8,7 @@ import spotifyLogo from './Spotify.png'
 const Home = () => {
   return (
 
-  <div className='bg-black h-screen'>
+  <div className='app-screen home-screen bg-black h-screen'>
     <Navbar/>
     <Sidebar/>
     <Album/>

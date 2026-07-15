@@ -9,7 +9,7 @@ import Songs from '../components/Songs'
 
 const Audio = () => {
   return (
-    <div  className='bg-black h-screen'>
+    <div className='app-screen audio-screen bg-black h-screen'>
         <Navbar/>
         <Sidebar/>
         <Header/>

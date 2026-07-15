@@ -62,7 +62,7 @@ const Player = () => {
   };
 
   return (
-    <div className='w-full h-24 bg-black border-t border-gray-800 flex items-center px-6 gap-6'>
+    <div className='music-player w-full h-24 bg-black border-t border-gray-800 flex items-center px-6 gap-6'>
 
     
       <div className='flex items-center gap-3 w-64 flex-shrink-0'>

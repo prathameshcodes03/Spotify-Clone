@@ -62,14 +62,14 @@ const Header = () => {
 
   return (
     <header 
-      className="flex justify-end items-start rounded-2xl px-8 h-170 my-[-42rem] w-250 ml-110" 
+      className="audio-header flex justify-end items-start rounded-2xl px-8 h-170 my-[-42rem] w-250 ml-110" 
       style={headerStyle}
     >
       {currentImage && (
         <img 
           src={currentImage} 
           alt="Active Track" 
-          className="object-cover rounded-2xl mr-190 mt-2 h-40 w-40 border border-zinc-700" 
+          className="audio-header-image object-cover rounded-2xl mr-190 mt-2 h-40 w-40 border border-zinc-700" 
         />
       )}
     </header>

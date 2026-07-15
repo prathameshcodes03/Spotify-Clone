@@ -3,7 +3,7 @@ import React from 'react'
 const Sidebar = () => {
   return (
  
-<div className='h-170 w-1/4 ml-2 bg-[#121212] rounded-3xl mt-4 overflow-hidden p-5'>
+<div className='app-sidebar h-170 w-1/4 ml-2 bg-[#121212] rounded-3xl mt-4 overflow-hidden p-5'>
 
 
   <div className='flex justify-between items-center text-white w-full'>

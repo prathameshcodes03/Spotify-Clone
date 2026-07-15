@@ -32,12 +32,12 @@ const Songs = () => {
   const tracks = activeFolder ? activeFolder.songs : []
 
   return (
-    <div className="rounded-2xl w-1/2 ml-120 text-white mt-20">
+    <div className="songs-panel rounded-2xl w-1/2 ml-120 text-white mt-20">
       <div className="mb-8">
-        <h2 className="text-3xl ml-50 font-bold mb-2">
+        <h2 className="songs-title text-3xl ml-50 font-bold mb-2">
           {activeFolder ? activeFolder.name : "Popular Tracks"}
         </h2>
-        <p className="text-gray-400 ml-50 text-sm">
+        <p className="songs-description text-gray-400 ml-50 text-sm">
           {activeFolder ? activeFolder.description : "Listen to top music"}
         </p>
       </div>

@@ -14,8 +14,8 @@ const Navbar = () => {
   }
 
   return (
-    <div className='w-full h-16 bg-black'>
-      <div className='flex justify-start items-center flex-nowrap gap-x-4 h-full px-4'>
+    <div className='site-navbar w-full h-16 bg-black'>
+      <div className='site-navbar-inner flex justify-start items-center flex-nowrap gap-x-4 h-full px-4'>
         <img 
           className='rounded-full h-14 object-contain hover:rotate-[360deg] hover:scale-110 transition-all duration-700 cursor-pointer' 
           src={spotifyLogo} 
@@ -26,7 +26,7 @@ const Navbar = () => {
           <i className="fa-regular fa-house"></i>
         </button>
 
-        <div className="flex items-center gap-4">
+        <div className="navbar-search-actions flex items-center gap-4">
           <div className="relative w-70 group">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <i className="fa-solid fa-magnifying-glass text-gray-400 group-focus-within:text-white transition-colors"></i>
@@ -50,8 +50,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className='flex justify-end ml-67 flex-wrap'>
-          <div className='flex justify-end gap-x-8'>
+        <div className='navbar-links-wrap flex justify-end ml-67 flex-wrap'>
+          <div className='navbar-links flex justify-end gap-x-8'>
             <Link to="/premium" className='text-white cursor-pointer mt-4 hover:text-gray-300 hover:scale-105 transition-all'>Premium</Link>
             <Link to="/support" className='text-white cursor-pointer mt-4 hover:text-gray-300 hover:scale-105 transition-all'>Support</Link>
             <Link to="/download" className='text-white cursor-pointer mt-4 hover:text-gray-300 hover:scale-105 transition-all'>Download</Link>
