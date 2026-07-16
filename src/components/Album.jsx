@@ -18,7 +18,7 @@ import album9 from '../assests/sonu.jpeg'
 
 const Album = () => {
   return (
-    <div className='album-panel h-170 w-5xl bg-gray-900 rounded-2xl ml-105 my-[-42.5rem] overflow-hidden'>
+    <div className='album-panel h-170 w-5xl bg-gray-900 rounded-2xl ml-105 my-[-42.5rem] overflow-hidden flex flex-col'>
 
       <div className='album-filters flex items-center gap-x-3 w-auto'>
         <button className='cursor-pointer bg-white text-black border border-transparent text-center rounded-full h-8 px-5 mt-5 ml-4 hover:bg-black hover:text-white hover:border-white transition-all duration-300 font-bold text-sm'>
@@ -32,7 +32,7 @@ const Album = () => {
         </button>
       </div>
 
-      <div className="album-content px-6 py-4 text-white overflow-y-auto h-full">
+      <div className="album-content px-6 py-4 text-white overflow-y-auto flex-1 min-h-0">
 
         <div className="mt-8 mb-6">
           <h1 className="text-3xl font-bold text-start mb-4 ml-4">Featured Charts</h1>
