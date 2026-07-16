@@ -19,12 +19,12 @@ const Sidebar = () => {
 </button>
  </div>
 
-      <div className='library-card flex flex-col justify-center items-start bg-gray-800 rounded-2xl px-2 pt-2 mt-20 text-center text-white gap-y-4 h-35 flex-wrap'>
+      <div className='library-card flex flex-col justify-center items-start bg-gray-800 rounded-2xl text-center text-white'>
 
       <h1 className='text-1.5xl font-bold'>Create your first playlist</h1>
         <p className='text-1.5xl font-bold'> Its easy, we will help you</p>
 
-        <button className='cursor-pointer library-card-button ml-3 bg-white text-black border border-transparent text-center rounded-full h-8 w-30 flex items-center justify-center gap-2 hover:bg-black hover:text-white hover:border-white transition-all duration-300 font-bold text-sm'>
+        <button className='cursor-pointer library-card-button bg-white text-black border border-transparent text-center rounded-full h-8 w-30 flex items-center justify-center gap-2 hover:bg-black hover:text-white hover:border-white transition-all duration-300 font-bold text-sm'>
    
     Create Playlist
 </button>
@@ -35,12 +35,12 @@ const Sidebar = () => {
 
 
 
-            <div className='library-card flex flex-col bg-gray-800 rounded-2xl px-2 pt-2 justify-center items-start mt-20 text-center text-white gap-y-4 h-35 flex-wrap'>
+            <div className='library-card flex flex-col bg-gray-800 rounded-2xl justify-center items-start text-center text-white'>
 
-              <h1 className='text-1.5xl font-bold'>Lets Find some podcasts to follow</h1>
-                <p className='text-1.5xl font-bold'> We'll keep you updated on episodes </p>
+              <h1 className='text-1.3xl font-bold'>Lets Find some podcasts to follow</h1>
+                <p className='text-1.3xl font-bold'> We'll keep you updated on episodes </p>
 
-                <button className='cursor-pointer library-card-button ml-3 bg-white text-black border border-transparent text-center rounded-full h-8 w-30 flex items-center justify-center gap-2 hover:bg-black hover:text-white hover:border-white transition-all duration-300 font-bold text-sm'>
+                <button className='cursor-pointer library-card-button bg-white text-black border border-transparent text-center rounded-full h-8 w-30 flex items-center justify-center gap-2 hover:bg-black hover:text-white hover:border-white transition-all duration-300 font-bold text-sm'>
           
             Browse Playlist
         </button>
