@@ -149,9 +149,21 @@ body,
     padding: 12.5rem 2rem 2rem;
   }
 
-  .songs-title,
+  .songs-heading {
+    margin-bottom: 2rem;
+  }
+
+  .songs-title {
+    margin: 0 0 .25rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
   .songs-description {
-    margin-left: 0;
+    margin: 0;
+    color: #b3b3b3;
+    font-size: .875rem;
   }
 
   .music-player {
@@ -322,22 +334,24 @@ body,
   .songs-panel {
     width: auto;
     margin-top: 1rem;
-    padding: 0 .75rem;
+    padding: 0 1rem;
   }
 
-  .songs-title,
-  .songs-description {
-    margin-left: 0;
+  .songs-heading {
+    margin: 0 0 1rem;
     text-align: left;
   }
 
   .songs-title {
+    margin: 0 0 .25rem;
     font-size: 1.5rem;
-    margin-bottom: .25rem;
+    line-height: 1.2;
   }
 
   .songs-description {
+    margin: 0;
     font-size: .8125rem;
+    line-height: 1.4;
   }
 
   .music-player {
