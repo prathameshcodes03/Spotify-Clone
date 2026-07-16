@@ -36,7 +36,7 @@ const Album = () => {
 
         <div className="mt-8 mb-6">
           <h1 className="text-3xl font-bold text-start mb-4 ml-4">Featured Charts</h1>
-          <div className="flex flex-nowrap gap-x-6 overflow-x-auto scrollbar-hide pb-4 px-4">
+          <div className="album-row flex flex-nowrap gap-x-6 overflow-x-auto scrollbar-hide pb-4 px-4">
             <Music imageSrc={album1}/>
             <Music imageSrc={album2}/>
             <Music imageSrc={album3}/>
@@ -48,7 +48,7 @@ const Album = () => {
 
         <div className="mt-8 mb-6">
           <h1 className="text-3xl font-bold text-start mb-4 ml-4">Popular Artists</h1>
-          <div className="flex flex-nowrap gap-x-6 overflow-x-auto scrollbar-hide pb-4 px-4">
+          <div className="album-row flex flex-nowrap gap-x-6 overflow-x-auto scrollbar-hide pb-4 px-4">
             <Music  imageSrc={album5} />
             <Music  imageSrc={album7}/>
             <Music  imageSrc={album8}/>
