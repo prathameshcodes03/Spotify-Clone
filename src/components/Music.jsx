@@ -16,7 +16,7 @@ const Music = ({ imageSrc }) => {
   return (
     <div className="music-card">
       <button 
-        className='music-card-button h-50 w-50 mt-12 ml-10 cursor-pointer rounded-2xl bg-red-600' 
+        className='music-card-button h-50 w-50 cursor-pointer rounded-2xl bg-red-600' 
         onClick={handlePlayClick}
         style={{ 
           backgroundImage: `url(${imageSrc})`, 
