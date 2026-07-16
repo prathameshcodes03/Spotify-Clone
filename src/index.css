@@ -260,11 +260,20 @@ body,
     min-height: calc(100dvh - 9rem);
     margin-top: .75rem;
     margin-bottom: 0;
-    border-radius: .75rem;
+    border-radius: 1rem;
   }
 
   .album-content {
     overflow: visible;
+    padding-top: .75rem;
+  }
+
+  .album-content .mt-8 {
+    margin-top: 1.5rem;
+  }
+
+  .album-content .mb-6 {
+    margin-bottom: 1.5rem;
   }
 
   .album-filters {
@@ -296,7 +305,7 @@ body,
   }
 
   .audio-header {
-    height: 13rem;
+    height: 12rem;
     margin-top: .75rem;
     margin-bottom: 0;
     padding: 1rem;
@@ -305,19 +314,30 @@ body,
   }
 
   .audio-header-image {
-    width: 9rem;
-    height: 9rem;
+    width: 8.5rem;
+    height: 8.5rem;
     margin: 0;
   }
 
   .songs-panel {
     width: auto;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     padding: 0 .75rem;
+  }
+
+  .songs-title,
+  .songs-description {
+    margin-left: 0;
+    text-align: left;
   }
 
   .songs-title {
     font-size: 1.5rem;
+    margin-bottom: .25rem;
+  }
+
+  .songs-description {
+    font-size: .8125rem;
   }
 
   .music-player {
