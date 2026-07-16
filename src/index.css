@@ -4,36 +4,27 @@
     display: none;
 }
 
-/* Responsive layout overrides: desktop styling remains unchanged. */
-@media (max-width: 1100px) {
+/* Layout overrides keep the original components while removing fixed offsets. */
+@media (min-width: 768px) {
   .app-screen {
     min-height: 100dvh;
-    height: auto;
-    padding-bottom: 6rem;
+    height: 100dvh;
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: clamp(14rem, 24vw, 20rem) minmax(0, 1fr);
+    grid-template-rows: 4rem minmax(0, 1fr);
+    gap: .5rem;
+    overflow: hidden;
   }
 
-  .app-sidebar {
-    width: 27%;
+  .site-navbar {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    border-radius: .75rem;
   }
 
-  .album-panel {
-    width: calc(73% - 1.5rem);
-    margin: -42.5rem 0 0 calc(27% + 1rem);
-  }
-
-  .audio-header {
-    width: calc(73% - 1.5rem);
-    margin: -42rem 0 0 calc(27% + 1rem);
-  }
-
-  .songs-panel {
-    width: calc(73% - 1.5rem);
-    margin-left: calc(27% + 1rem);
-  }
-
-  .songs-title,
-  .songs-description {
-    margin-left: 0;
+  .site-navbar-inner {
+    padding: 0 1rem;
   }
 
   .navbar-links-wrap {
@@ -41,7 +32,88 @@
   }
 
   .navbar-links {
-    gap: 1rem;
+    gap: clamp(.75rem, 1.5vw, 2rem);
+  }
+
+  .app-sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    border-radius: .75rem;
+  }
+
+  .album-panel {
+    grid-column: 2;
+    grid-row: 2;
+    width: auto;
+    height: auto;
+    min-width: 0;
+    margin: 0;
+    border-radius: .75rem;
+  }
+
+  .audio-screen {
+    grid-template-rows: 4rem minmax(0, 1fr) 6rem;
+  }
+
+  .audio-screen .app-sidebar {
+    grid-row: 2;
+  }
+
+  .audio-header,
+  .songs-panel {
+    grid-column: 2;
+    grid-row: 2;
+    width: auto;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .audio-header {
+    height: auto;
+    padding: 1.5rem;
+    justify-content: flex-start;
+    border-radius: .75rem;
+  }
+
+  .audio-header-image {
+    width: 10rem;
+    height: 10rem;
+    margin: 0;
+  }
+
+  .songs-panel {
+    z-index: 1;
+    overflow-y: auto;
+    padding: 12.5rem 2rem 2rem;
+  }
+
+  .songs-title,
+  .songs-description {
+    margin-left: 0;
+  }
+
+  .music-player {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    height: auto;
+    min-height: 0;
+    padding: .75rem 1.5rem;
+    border-radius: .75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1050px) {
+  .navbar-links > a,
+  .navbar-links > button:first-of-type {
+    display: none;
+  }
+
+  .navbar-search-actions .relative.w-70 {
+    width: min(18rem, 28vw);
   }
 }
 
@@ -102,6 +174,12 @@
     display: none;
   }
 
+  .app-screen {
+    min-height: 100dvh;
+    height: auto;
+    padding-bottom: 5.5rem;
+  }
+
   .album-panel,
   .audio-header,
   .songs-panel {
@@ -112,8 +190,10 @@
 
   .album-panel {
     height: auto;
-    min-height: calc(100dvh - 8.5rem);
+    min-height: calc(100dvh - 9rem);
     margin-top: .75rem;
+    margin-bottom: 0;
+    border-radius: .75rem;
   }
 
   .album-content {
@@ -138,8 +218,10 @@
   .audio-header {
     height: 13rem;
     margin-top: .75rem;
+    margin-bottom: 0;
     padding: 1rem;
     justify-content: flex-start;
+    border-radius: .75rem;
   }
 
   .audio-header-image {
@@ -151,7 +233,7 @@
   .songs-panel {
     width: auto;
     margin-top: 1.5rem;
-    padding: 0 .5rem;
+    padding: 0 .75rem;
   }
 
   .songs-title {

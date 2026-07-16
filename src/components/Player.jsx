@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { usePlayer } from '../context/PlayerContext';
 
 const Player = () => {
-  const { currentImage, currentSong } = usePlayer();
+  const { currentImage, currentSong, registerAudioElement } = usePlayer();
 
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying]     = useState(false);
@@ -15,10 +15,10 @@ const Player = () => {
 
   useEffect(() => {
     if (!currentSong?.audioUrl || !audioRef.current) return
-    audioRef.current.src = currentSong.audioUrl
-    audioRef.current.load()
-    audioRef.current.play().catch(err => console.log('play error:', err))
-    setIsPlaying(true)
+    if (!audioRef.current.src.endsWith(currentSong.audioUrl)) {
+      audioRef.current.src = currentSong.audioUrl
+      audioRef.current.load()
+    }
   }, [currentSong])
 
   const togglePlay = () => {
@@ -163,9 +163,14 @@ const Player = () => {
 
 
       <audio
-        ref={audioRef}
+        ref={(element) => {
+          audioRef.current = element
+          registerAudioElement(element)
+        }}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleTimeUpdate}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
         onEnded={() => setIsPlaying(false)}
         loop={isRepeat}
       />
