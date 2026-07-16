@@ -299,12 +299,15 @@ body,
 
   .album-row {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    flex-wrap: wrap;
     gap: .875rem;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 0 0 .25rem;
     scrollbar-width: none;
+    max-height: 35rem;
+    align-content: flex-start;
   }
 
   .album-row::-webkit-scrollbar {
